@@ -1,0 +1,22 @@
+USE isad251;
+CREATE TABLE deadlinesandappointments (
+    deadlineId int,
+    deadlineName varchar(32) NOT NULL,
+    childName varchar(32) NOT NULL,
+    dateset datetime NOT NULL,
+    details varchar(32),
+    notes varchar(32),
+   FOREIGN KEY (childname) REFERENCES familymembers(childname)
+);
+
+ALTER TABLE `deadlinesandappointments` ADD INDEX(`deadlineId`);
+
+USE isad251;
+ALTER TABLE `deadlinesandappointments` CHANGE `deadlineId` `deadlineId` INT NOT NULL AUTO_INCREMENT;
+
+
+USE isad251;
+CREATE TABLE familymembers (
+childname varchar(32) NOT NULL,
+ PRIMARY KEY (childname)
+);

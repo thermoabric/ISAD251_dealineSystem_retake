@@ -1,0 +1,150 @@
+
+CREATE PROCEDURE `getAllFamilyMembers` ()
+SELECT * FROM familymembers
+
+CREATE PROCEDURE `getAllDeadlinesAndAppointments` ()
+SELECT * FROM deadlinesandappointments
+
+CREATE PROCEDURE `addNewDeadlineParent` (
+	IN deadlineName VARCHAR(32),
+    IN childName VARCHAR(32),
+    IN dateTimeSet VARCHAR(32),
+    IN details VARCHAR(32),
+    IN notes VARCHAR(32)
+    
+)
+BEGIN
+	INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+	VALUES(
+	NULL, deadlineName, childName, datTimeSet, details, notes);
+		
+
+END
+
+USE isad251;
+CALL addNewDeadlineParent('party',' frank','2020-08-30 20:30:00','bring cake',' be ready 10 mins before');
+
+CREATE PROCEDURE `viewAllDentistAppointments`(	
+)
+BEGIN
+	SELECT * FROM deadlinesandappointments
+    WHERE deadlineName = 'Dentist';
+END
+
+USE isad251;
+CALL viewAllDentistAppointments();
+
+CREATE PROCEDURE `editDetailsOfFamilyMember` (
+IN detailsIn VARCHAR(32),
+IN deadlineIdIn VARCHAR(32)
+
+)
+BEGIN
+	UPDATE deadlinesandappointments
+	SET details = detailsIn
+    WHERE deadlineId = deadlineIdIn;
+
+
+
+END
+
+USE isad251;
+CALL editDetailsOfFamilyMember('dont forget water','10');
+
+CREATE PROCEDURE `addNotesToFamilyMember`(
+IN notesIn VARCHAR(32),
+IN deadlineIdIn VARCHAR(32)
+)
+BEGIN
+	UPDATE deadlinesandappointments
+	SET notes = notesIn
+    WHERE deadlineIdIn = deadlineId;
+
+
+
+END
+USE isad251;
+CALL editDetailsOfFamilyMember('notes from procedure','11');
+
+
+
+CREATE PROCEDURE `deleteDeadline`(
+IN deadLineIdIn VARCHAR(32)
+)
+BEGIN
+	DELETE FROM deadlinesandappointments 
+    WHERE deadLineId = deadLineIdIn;
+
+END
+
+USE isad251;
+CALL editDetailsOfFamilyMember('11');
+
+
+CREATE PROCEDURE `childViewDeadlines`(
+	IN childNameIn varchar(32)
+)
+BEGIN
+	
+    SELECT * FROM deadlinesandappointments
+    WHERE childname = childNameIn;
+END
+
+USE isad251;
+CALL childViewDeadlines('ben');
+
+CREATE ` PROCEDURE `childShowTaskmet`(
+	IN deadlineIdIn VARCHAR(32), 
+    IN notesIn VARCHAR(32)
+
+)
+BEGIN
+	UPDATE deadlinesandappointments  
+    SET notes = notesIn
+    WHERE deadlineId = deadlinesIdIn;
+    
+    
+END
+
+CREATE PROCEDURE `moveDeadlineChild`(
+IN datetimeIn datetime,
+IN deadlineIdIn VARCHAR(32)
+
+)
+BEGIN
+	UPDATE deadlinesandappointments 
+    SET dateTimesset = datetimeIn
+    WHERE deadlineId = deadlineIdIn;
+    
+    
+END
+
+CREATE PROCEDURE `createSharedDeadline`(
+IN deadlineNameIn VARCHAR(32),
+IN dateTimesetIn datetime,
+IN details VARCHAR(32),
+IN notes VARCHAR(32)
+)
+BEGIN
+	
+	DECLARE n INT DEFAULT 0;
+	DECLARE i INT DEFAULT 0;
+    DECLARE childNameF VARCHAR(32); 
+	SELECT COUNT(*) FROM familymembers INTO n;
+	SET i=0;
+	WHILE i<n DO 
+		SET i = i + 1;
+        SET childNameF = (SELECT childname FROM familymembers WHERE childId = i);
+        
+		INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+		VALUES
+		(
+		NULL, deadlineNameIn, childNameF, dateTimesetIn, details, notes
+        
+		);
+	
+END WHILE;	
+END
+
+USE isad251;
+CALL createSharedDeadline('Dentist','2020-07-30 11:34:00','dont forget money','bring toothbrushs');

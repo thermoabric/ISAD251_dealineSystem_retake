@@ -1,0 +1,79 @@
+INSERT INTO familymembers(childname) VALUES ('ben');
+INSERT INTO familymembers(childname) VALUES ('amy');
+INSERT INTO familymembers(childname) VALUES ('kyal');
+INSERT INTO familymembers(childname) VALUES ('ross');
+INSERT INTO familymembers(childname) VALUES ('anny');
+INSERT INTO familymembers(childname) VALUES ('frank');
+
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'football', 'ben', '2020-07-29 10:34:00', 'bring extra socks ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'dancing ', 'ross', '2020-07-30 11:34:00', 'remember drink ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'hockey', 'kyal', '2020-08-28 11:37:00', 'bring snack bar ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'dentist', 'frank', '2020-09-15 12:37:00', '10 mins early', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'homework', 'anny', '2020-10-07 15:00:00', 'check work', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'football', 'amy', '2020-10-07 15:00:00', 'bring blanket', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'football', 'ben', '2020-08-17 13:10:00', 'take drink ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'dancing ', 'frank', '2020-09-05 17:10:00', 'collect at 8Pm ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'hockey', 'amy', '2020-10-07 15:00:00', '10 mins early', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'dentist', 'kyal', '2020-07-30 11:34:00', 'remember drink ', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'homework', 'anny', '2020-11-23 20:00:00', 'check work', ''
+);
+
+INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes)
+VALUES
+(
+NULL, 'football', 'kyal', '2020-09-05 17:10:00', 'bring extra socks ', ''
+);
