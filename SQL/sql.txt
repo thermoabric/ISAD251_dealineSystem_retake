@@ -17,6 +17,8 @@ ALTER TABLE `deadlinesandappointments` CHANGE `deadlineId` `deadlineId` INT NOT 
 
 USE isad251;
 CREATE TABLE familymembers (
+childId INT NOT NULL,
 childname varchar(32) NOT NULL,
  PRIMARY KEY (childname)
+ PRIMARY KEY (childId)
 );
