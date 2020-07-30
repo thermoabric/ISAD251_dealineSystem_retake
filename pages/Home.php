@@ -39,7 +39,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Parent</a>
+    <a href="#" class="w-bar-item w3-button w3-padding-large">Parent</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Child</a>
   </div>
 </div>
@@ -50,33 +50,39 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <p class="w3-xlarge">Welcome please select your account type </p>
     <div class="w3-row-padding w3-margin-bottom">
     <div class="w3-half">
-      <div class="w3-container w3-green w3-padding-16">
-        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        
+      <div class="w3-container w3-green w3-padding-16" >
+          <a class=" w3-button  w3-hover-white">
+        <div class="w3-center"><i class="fa fa-eye w3-xxxlarge"></i></div>
         <div class="w3-clear"></div>
-        <h4>Parent</h4>
+        <h2>Parent</h2>
+        </a>
       </div>
+            
     </div>
     <div class="w3-half">
       <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+           <a class=" w3-button  w3-hover-white">
+        <div class="w3-center"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-clear"></div>
-        <h4>Child</h4>
+        <h2>Child</h2>
+        </a>
       </div>
   </div>
 </header>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<!-- bottom grid -->
+<div class="w3-row-padding w3-padding-64 w3-container" >
   <div class="w3-content">
-    	<h1 class="w3-margin w3-jumbo">have a wounderful day ! </h1>
+      <center>
+    	<h1 class="w3-margin w3-jumbo">Have a wonderful day ! </h1>
+        </center>
   </div>
 </div>
 
 
-    
-
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+    <h1 class="w3-margin w3-xlarge">Created by Jake kirk</h1>
 </div>
 
 <!-- Footer -->
@@ -89,7 +95,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
  </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <script>
