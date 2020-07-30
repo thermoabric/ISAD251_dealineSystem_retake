@@ -10,7 +10,7 @@ and open the template in the editor.
     
 
 
-<!DOCTYPE html>
+
 <html lang="en">
 <title>Appointments and deadlines manager</title>
 <meta charset="UTF-8">
@@ -30,17 +30,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="./pages/Home.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="./pages/parent.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Parent</a>
-    <a href="./pages/child.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Child </a>
+    <a href="/pages/Home.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/pages/parent.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Parent</a>
+    <a href="/pages/child.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Child </a>
 
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="./pages/Home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="./pages/parent.html" class="w-bar-item w3-button w3-padding-large">Parent</a>
-    <a href="./pages/parent.html" class="w3-bar-item w3-button w3-padding-large">Child</a>
+    <a href="/pages/Home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="/pages/parent.html" class="w-bar-item w3-button w3-padding-large">Parent</a>
+    <a href="/pages/parent.html" class="w3-bar-item w3-button w3-padding-large">Child</a>
   </div>
 </div>
 
@@ -53,7 +53,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         
 <!--        Parent area with button -->
       <div class="w3-container w3-green w3-padding-16" >
-          <a href="./pages/parent.html" class=" w3-button  w3-hover-white">
+          <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
         <div class="w3-center"><i class="fa fa-eye w3-xxxlarge"></i></div>
         <div class="w3-clear"></div>
         <h2>Parent</h2>
@@ -64,7 +64,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!--     child area with button -->
     <div class="w3-half">
       <div class="w3-container w3-blue w3-padding-16">
-           <a  href="./pages/child.html" class=" w3-button  w3-hover-white">
+           <a  href="/pages/child.html" class=" w3-button  w3-hover-white">
         <div class="w3-center"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-clear"></div>
         <h2>Child</h2>
