@@ -23,6 +23,9 @@ this the is the parent page which has the server functions to do the following
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--pop up box -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -59,7 +62,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
         <!-- add deadline for all children-->
             <div class="w3-container w3-yellow w3-padding-16" >
-                <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
+                <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='block'" class=" w3-button  w3-hover-white">
                     <div class="w3-clear"></div>
                     <h2>add deadline for all children</h2>
                 </a>
@@ -109,7 +112,47 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 </header>
 
-<!-- bottom grid -->
+  <div id="addDeadlineForAllChildren" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addDeadlineForAllChildren">×</span>
+        <h5>please enter information below</h5> 
+      </div>
+
+      <form class="w3-container" action="/action_page.php">
+        <div class="w3-section">
+            
+          <label><b>Deadline name </b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadlineName" required>
+          
+          <label><b>Date and time in format year-month-day hour:min:sec</b></label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime" required>
+          
+          <label><b>Details </b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="details" required>
+          
+          <label><b>Notes </b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notes" required>
+          
+          
+          
+          
+          
+          <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Submit</button>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+      
+
+<!-- main grid -->
 <div class="w3-row-padding w3-padding-64 w3-container" >
   <div class="w3-content">
       <center>
