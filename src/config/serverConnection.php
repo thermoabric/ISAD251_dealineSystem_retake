@@ -1,7 +1,5 @@
 <?php
-	
-    // specify your own database credentials
-	const DB_SERVER = 'http://localhost:8080';
+        const DB_SERVER = 'http://localhost:8080';
 	const DB_USER = 'root';
 	const DB_PASSWORD = '';
 	const DB_DATABASE = 'isad251';
@@ -19,7 +17,5 @@
 		}
 		return $dbConnection;
 		}
-	
+	?>
 
-
-?>
