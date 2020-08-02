@@ -5,7 +5,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-    include 'serverConnectionString.php';
+    include './public/serverConnectionString';
+    include '../public/serverTestconnection.php';
    ?> 
     
 

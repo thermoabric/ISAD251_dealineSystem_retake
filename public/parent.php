@@ -37,17 +37,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="/pages/Home.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
-    <a href="/pages/parent.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Parent</a>
-    <a href="/pages/child.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Child </a>
+    <a href="../public/Home.php" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="../public/parent.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-white">Parent</a>
+    <a href="../public/child.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Child </a>
 
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="/pages/Home.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-    <a href="/pages/parent.html" class="w-bar-item w3-button w3-padding-large">Parent</a>
-    <a href="/pages/parent.html" class="w3-bar-item w3-button w3-padding-large">Child</a>
+    <a href="../public/Home.php" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="../public/parent.php" class="w-bar-item w3-button w3-padding-large">Parent</a>
+    <a href="../public/child.php" class="w3-bar-item w3-button w3-padding-large">Child</a>
   </div>
 </div>
 
@@ -84,13 +84,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- left side-->
          <div class="w3-half">
             
-            <div class="w3-container w3-green w3-padding-16" >
+            <div class="w3-container w3-blue w3-padding-16" >
                     <button onclick="document.getElementById('deletedeadline').style.display='block'"  class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
                         <h2>delete deadline </h2>
                     </a>
             </div>  
-            <div class="w3-container w3-yellow w3-padding-16" >
+            <div class="w3-container w3-purple w3-padding-16" >
                     <button onclick="document.getElementById('addmember').style.display='block'"class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
                         <h2>add family member</h2>
