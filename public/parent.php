@@ -59,51 +59,39 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   
     <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-half">
-
-        <!-- add deadline for all children-->
-<!--            <div class="w3-container w3-yellow w3-padding-16" >
+<!--        all forms here i idealy need to be converted so code can be reused -->
+<!--         add deadline for all children-->
+            <div class="w3-container w3-purple w3-padding-16" >
                 <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='block'" class=" w3-button  w3-hover-white">
                     <div class="w3-clear"></div>
-                    <h2>add deadline for all children</h2>
+                    <h2>add deadline</h2>
                 </a>
-            </div> -->
+            </div> 
 
-
-           
-        
-        
-        
-        
             <div class="w3-container w3-blue w3-padding-16" >
-                    <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('viewDeadLine').style.display='block'" class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
-                        <h2>view dentist appointments</h2>
+                        <h2>view appointments</h2>
                     </a>
             </div>  
             <div class="w3-container w3-purple w3-padding-16" >
-                    <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('editDetailsAndNotes').style.display='block'" class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
-                        <h2>edit details of deadlines</h2>
+                        <h2>edit details and notes </h2>
                     </a>
             </div>
         </div>
+<!-- left side-->
          <div class="w3-half">
-
-        <!-- add deadline for all children-->
-            <div class="w3-container w3-blue w3-padding-16" >
-                <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
-                    <div class="w3-clear"></div>
-                    <h2>add notes to deadlines</h2>
-                </a>
-            </div> 
+            
             <div class="w3-container w3-green w3-padding-16" >
-                    <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('deletedeadline').style.display='block'"  class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
                         <h2>delete deadline </h2>
                     </a>
             </div>  
             <div class="w3-container w3-yellow w3-padding-16" >
-                    <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('addmember').style.display='block'"class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
                         <h2>add family member</h2>
                     </a>
@@ -118,45 +106,205 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         
     </div>
 </header>
+<!--These are the forms for each function -->
+    <!--add deadline form-->
+    <div id="addDeadlineForAllChildren" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-  <div id="addDeadlineForAllChildren" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-  
-      <div class="w3-center"><br>
-        <span onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addDeadlineForAllChildren">×</span>
-        <h5>please enter information below</h5> 
-      </div>
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addDeadlineForAllChildren">×</span>
+            <h5>please enter information below</h5> 
+          </div>
 
-      <form class="w3-container" action="/action_page.php">
-        <div class="w3-section">
-            
-          <label><b>Deadline name </b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadlineName" required>
-          
-          <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime" required>
-          
-          <label><b>Details </b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="details" required>
-          
-          <label><b>Notes </b></label>
-          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notes" required>
-          
-          
-          
-          
-          
-          <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Submit</button>
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+
+              <label><b>Deadline name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadlineName" required>
+
+              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime" required>
+
+              <label><b>Details </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="details" required>
+
+              <label><b>Notes </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notes" required>
+
+
+
+
+
+              <button class="w3-button w3-block w3-green w3-section w3-padding" type="add for all children ">add for all children</button>
+              
+              <label><b>Add for only this child </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter childname" name="childname" required>
+              <button class="w3-button w3-block w3-green w3-section w3-padding" type="add ">add </button>
+              
+            </div>
+          </form>
+
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
         </div>
-      </form>
-
-      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-        <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
       </div>
+    <!--viewdeadline form-->
+    <div id="viewDeadLine" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-    </div>
-  </div>
-</div>
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('viewDeadLine').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close viewDeadLine">×</span>
+            <h5>please enter information below</h5> 
+          </div>
+
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+
+              <label><b>Child name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name to find deadline" name="childname" required>  
+              
+              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
+
+              <label><b>Deadline name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
+
+              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
+
+              <label><b>Details </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no details" name="details" required>
+
+              <label><b>Notes </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no notes" name="notes" required>
+
+
+              
+            </div>
+          </form>
+
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('viewDeadLine').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    <!--edit details and notes-->
+    <div id="editDetailsAndNotes" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('editDetailsAndNotes').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close editDetailsAndNotes">×</span>
+            <h5>please enter information below</h5> 
+          </div>
+
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+
+    <!--            user enteres these vaules -->
+              <label><b>Enter Child name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+
+              <label><b>Enter Deadline name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
+
+              <label><b> Enter Date and time in format year-month-day hour:min:sec</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
+
+              
+              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
+    <!--          user can now edit these values-->
+
+
+              <label><b>Details add or edit if required </b></label>
+              <input class="w3-input w3-border" type="text" placeholder="there are no details" name="details" required>
+
+              <label><b>Notes add or edit if required </b></label>
+              <input class="w3-input w3-border" type="text" placeholder="there are no notes" name="notes" required>
+
+
+              <button  type="button" class="w3-block w3-green w3-section w3-padding">Submit and save</button>
+              
+            </div>
+          </form>
+
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('editDetailsAndNotes').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    <!-- delete deadline-->
+    <div id="deletedeadline" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('deletedeadline').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close deletedeadline">×</span>
+            <h5>please enter information below</h5> 
+          </div>
+
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+
+              <label><b>Child name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+              
+              
+
+              <label><b>Deadline name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter deadline name" name="deadlineName" required>
+
+              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="enter date time" name="dateTime" required>
+
+              <button  type="deletedeadline" class="w3-block w3-green w3-section w3-padding">delete deadline</button>
+
+
+              
+            </div>
+          </form>
+
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('deletedeadline').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    <!-- add new family member-->
+    <div id="addmember" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('addmember').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addmember">×</span>
+            <h5>please enter information below</h5> 
+          </div>
+
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+
+              <label><b>Child name </b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+              
+          
+
+              <button  type="addmember" class="w3-block w3-green w3-section w3-padding">add member</button>
+
+
+              
+            </div>
+          </form>
+
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('addmember').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          </div>
+
+        </div>
+      </div>
+    
+    
+
+
       
 
 <!-- main grid -->
