@@ -61,12 +61,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <div class="w3-half">
 
         <!-- add deadline for all children-->
-            <div class="w3-container w3-yellow w3-padding-16" >
+<!--            <div class="w3-container w3-yellow w3-padding-16" >
                 <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='block'" class=" w3-button  w3-hover-white">
                     <div class="w3-clear"></div>
                     <h2>add deadline for all children</h2>
                 </a>
-            </div> 
+            </div> -->
+
+
+           
+        
+        
+        
+        
             <div class="w3-container w3-blue w3-padding-16" >
                     <a href="/pages/parent.html" class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
