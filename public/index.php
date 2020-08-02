@@ -6,6 +6,6 @@ and open the template in the editor.
 -->
 
 <?php
-        include './pages\\Home.php'
+        include './Home.php'
          ?>
   
