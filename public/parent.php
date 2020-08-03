@@ -4,7 +4,7 @@ this the is the parent page which has the server functions to do the following
 -->
 
 <?php
-     include('./forms/viewDeadline.php');
+     
      
         ?>
 
@@ -179,33 +179,26 @@ tr:nth-child(even) {
                     <label><b>enter child name to find deadline </b></label>
                     <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn" id ="childNameIn"  required>  
                     <?php 
-//                    if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
-                      $childNameInHtml = $_POST['childNameIn'];
+                    if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
+//                        $childNameInHtml = $_POST['childNameIn'];
+                    $input = $_POST['childNameIn'];
+                    
+                    $data = [
+                        'childNameInHtml'=> $input
+                    ];
+                    extract($data);
+                    require './forms/viewDeadline.php';
 
                        
                        
-//                    }
+                 }
                     
                     ?>
                     
-                    <button name="submitChild" class="w3-block w3-green w3-section w3-padding ">load deadline</button>
+                    <button name="submitChild" class="w3-block w3-green w3-section w3-padding ">load appointments </button>
               
               </form>
-              
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName"  required>
 
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" id="datetime" required>
-
-              <label><b>Details </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no details" name="details" required>
-
-              <label><b>Notes </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no notes" name="notes" required>
-
-
-              
             </div>
           </form>
 
@@ -337,9 +330,15 @@ tr:nth-child(even) {
   <div class="w3-content">
       <center>
     	<h1 class="w3-margin w3-jumbo">Have a wonderful day ! </h1>
+        <p class="w3-xlarge">Here is the data you requested </p>
+       <?php
+            include "./forms/viewDeadline.php";
+     
+        ?>
         </center>
   </div>
 </div>
+
 
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">

@@ -1,9 +1,15 @@
 <?php
 include_once "serverConnection.php";
-include('./parent.php');
-  
-$result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments ('$childNameInHtml')");
-echo $childNameInHtml;
+
+
+
+
+//$result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments ($childNameInHtml)");
+
+$result = mysqli_query($conn," SELECT * FROM deadlinesandappointments WHERE childName = '$childNameInHtml' ");
+
+
+
 ?>
 <!DOCTYPE html>
 <?php
@@ -11,13 +17,16 @@ if(isset($_POST["submitChild"])) {
 ?>
     
 <html>
- <head>
- <title> Retrive data</title>
- </head>
+    <?php
+  if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
+      ?>
+ 
 <body>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
+  
+  
   <table>
   
   <tr>
@@ -55,6 +64,9 @@ else{
 ?>
  </body>
 </html>
+<?php
+}
+?>
 <?php
 }
 ?>
