@@ -4,10 +4,8 @@ this the is the parent page which has the server functions to do the following
 -->
 
 <?php
+     include('./forms/viewDeadline.php');
      
-
-
-
         ?>
 
 
@@ -30,6 +28,22 @@ this the is the parent page which has the server functions to do the following
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
 </style>
 <body>
 
@@ -161,12 +175,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
          
             <div class="w3-section">
-            
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name to find deadline" name="childname" id="childnameIn" required>  
+              <form method="post">
+                    <label><b>enter child name to find deadline </b></label>
+                    <input type="text" class="w3-input w3-border w3-margin-bottom"  name="childNameIn" id ="childNameIn"  required>  
+                    <?php 
+//                    if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
+
+
+                    $childNameInHtml = $_POST["childNameIn"];
+                    
+//                    }
+                    
+                    ?>
+                    
+                    <button name="submitChild" class="w3-block w3-green w3-section w3-padding ">load deadline</button>
               
-              <button  type="button" class="w3-block w3-green w3-section w3-padding ">next deadline</button>
               </form>
+              
               <label><b>Deadline name </b></label>
               <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
 

@@ -2,14 +2,9 @@
 include_once "serverConnection.php";
 
   
-$result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments ('$childNameInHtml')");
-
+$result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments");
 ?>
 <!DOCTYPE html>
-<?php
-if(isset($_POST["submitChild"])) { 
-?>
-    
 <html>
  <head>
  <title> Retrive data</title>
@@ -55,6 +50,4 @@ else{
 ?>
  </body>
 </html>
-<?php
-}
-?>
+
