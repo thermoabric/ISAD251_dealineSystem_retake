@@ -307,18 +307,33 @@ tr:nth-child(even) {
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
+         
             <div class="w3-section">
+              <form method="post">
+                    <label><b>enter child name to find deadline </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn2" id ="childNameIn2"  required>  
+                    <?php 
+                   
+                    if(!empty($_POST['childNameIn2'])){
+//                        
+                    $input = $_POST['childNameIn2'];
+                    
+                    $data = [
+                        'childNameInHtml2'=> $input
+                    ];
+                    extract($data);
+                    require './forms/addFamilyMember.php';
 
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="addmemberSave" class="w3-block w3-green w3-section w3-padding ">add member </button>
               
-          
+              </form>
 
-              <button  type="addmember" class="w3-block w3-green w3-section w3-padding">add member</button>
-
-
-              
             </div>
           </form>
 
