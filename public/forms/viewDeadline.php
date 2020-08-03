@@ -1,9 +1,9 @@
 <?php
 include_once "serverConnection.php";
-
+include('./parent.php');
   
 $result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments ('$childNameInHtml')");
-
+echo $childNameInHtml;
 ?>
 <!DOCTYPE html>
 <?php

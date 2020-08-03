@@ -177,13 +177,13 @@ tr:nth-child(even) {
             <div class="w3-section">
               <form method="post">
                     <label><b>enter child name to find deadline </b></label>
-                    <input type="text" class="w3-input w3-border w3-margin-bottom"  name="childNameIn" id ="childNameIn"  required>  
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn" id ="childNameIn"  required>  
                     <?php 
 //                    if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
+                      $childNameInHtml = $_POST['childNameIn'];
 
-
-                    $childNameInHtml = $_POST["childNameIn"];
-                    
+                       
+                       
 //                    }
                     
                     ?>
@@ -193,7 +193,7 @@ tr:nth-child(even) {
               </form>
               
               <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName"  required>
 
               <label><b>Date and time in format year-month-day hour:min:sec</b></label>
               <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" id="datetime" required>
