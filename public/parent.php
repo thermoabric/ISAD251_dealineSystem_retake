@@ -110,6 +110,13 @@ tr:nth-child(even) {
                         <h2>add family member</h2>
                     </a>
             </div>
+             <div class="w3-container w3-blue w3-padding-16" >
+                    <button onclick=" <?php  include_once "./forms/viewChildren.php";    ?> "class=" w3-button  w3-hover-white">
+                        <div class="w3-clear"></div>
+                        <h2>add family member</h2>
+                    </a>
+            </div>
+             
         </div>
 
         
@@ -319,6 +326,35 @@ tr:nth-child(even) {
 
         </div>
       </div>
+    <!--    <div id="showChildren" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+              <div class="w3-center"><br>
+                <span onclick="document.getElementById('showChildren').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close showChildren">×</span>
+                <h5>please enter information below</h5> 
+              </div>
+
+              <form class="w3-container" action="/action_page.php">
+                <div class="w3-section">
+
+                  <label><b>Child name </b></label>
+                  <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+
+
+
+                  <button  type="addmember" class="w3-block w3-green w3-section w3-padding">add member</button>
+
+
+
+                </div>
+              </form>
+
+              <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                <button onclick="document.getElementById('addmember').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+              </div>
+
+            </div>
+          </div>-->
     
     
 
