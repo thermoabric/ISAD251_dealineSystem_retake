@@ -7,7 +7,9 @@ include_once "serverConnection.php";
 
 $result = mysqli_query($conn," SELECT * FROM familymembers");
 ?>
-
+<?php
+if(isset($_POST["displayChildren"])) { 
+?>
     <html>
         
 
@@ -46,3 +48,6 @@ $result = mysqli_query($conn," SELECT * FROM familymembers");
         
     </html>
     
+<?php
+}
+?>

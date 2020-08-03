@@ -1,6 +1,7 @@
 <?php
     include_once "serverConnection.php";
-    //error_reporting(0);
+    error_reporting(0);
+    // thinks childnameinhtml undefined its not 
     
 
     //$result = mysqli_query($conn,"CALL getAllDeadlinesAndAppointments ($childNameInHtml)");
