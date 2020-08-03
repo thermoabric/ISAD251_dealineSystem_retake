@@ -139,33 +139,67 @@ tr:nth-child(even) {
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
+          
             <div class="w3-section">
-
+              <form method="post">
               <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadlineName" required>
-
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadLineIn" id ="deadLineIn" required>
+              
+             
+              
+              
               <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime" required>
+              <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime"id ="dateTimeIn" required>
 
               <label><b>Details </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="details" required>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="detailsIn" id ="detailsIn" required>
 
               <label><b>Notes </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notes" required>
-
-
-
-
-
-              <button class="w3-button w3-block w3-green w3-section w3-padding" type="add for all children ">add for all children</button>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notesIn"  id ="notesIn" required>
               
-              <label><b>Add for only this child </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter childname" name="childname" required>
-              <button class="w3-button w3-block w3-green w3-section w3-padding" type="add ">add </button>
+              <label><b>Child</b></label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter child if required" name="childNameIn"  id ="childNameIn" required>
               
+              
+              
+              <?php 
+                    if(!empty($_POST['deadLineIn'])&& !empty($_POST['dateTimeIn'])&& !empty($_POST['details']) && !empty($_POST['notes'])){
+//                        
+                    $inputDeadLineName = $_POST['deadLineIn'];
+                    $inputdatetimeIn = $_POST['dateTimeIn'];
+                    $inputDetails = $_POST['detailsIn'];
+                    $inputNotes = $_POST['notesIn'];
+                    $inputChildNameIn2 = $_POST['childNameIn'];
+                    
+                    $data = [
+                        'deadLineInHtml'=> $inputDeadLineName,
+                        'dateTimeInHtml'=> $inputdatetimeIn,
+                        'detailInHtml'=> $inputDetails,
+                        'notesInHtml'=> $inputNotes,
+                        'childNameInHtml2'=> $inputChildNameIn,
+                        
+                    ];
+                    extract($data);
+                    require './forms/addDeadline.php';
+
+                       
+                       
+                 }
+                    
+                    ?>  
+
+
+
+              <button name="submitAllChild" class="w3-block w3-green w3-section w3-padding ">add for all children </button>
+              
+              
+              <button name="addSingleChild" class="w3-block w3-green w3-section w3-padding ">add for single child </button>
+              
+           
+             </form> 
             </div>
-          </form>
+ 
+          
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>

@@ -5,7 +5,7 @@ include_once "serverConnection.php";
 
 
 
-$result = mysqli_query($conn," SELECT * FROM familymembers");
+$result = mysqli_query($conn," CALL getAllFamilyMembers");
 ?>
 <?php
 if(isset($_POST["displayChildren"])) { 
