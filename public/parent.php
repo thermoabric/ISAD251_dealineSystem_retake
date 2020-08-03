@@ -159,19 +159,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
+         
             <div class="w3-section">
-
+            
               <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name to find deadline" name="childname" required>  
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name to find deadline" name="childname" id="childnameIn" required>  
               
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
-
+              <button  type="button" class="w3-block w3-green w3-section w3-padding ">next deadline</button>
+              </form>
               <label><b>Deadline name </b></label>
               <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
 
               <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
+              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" id="datetime" required>
 
               <label><b>Details </b></label>
               <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no details" name="details" required>
@@ -343,6 +343,14 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+
+
+
+
+
+
+
 </script>
 
 </body>
