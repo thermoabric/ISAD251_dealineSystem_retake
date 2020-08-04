@@ -10,6 +10,10 @@ $result = mysqli_query($conn," CALL getAllFamilyMembers");
 <?php
 if(isset($_POST["displayChildren"])) { 
 ?>
+
+    
+    
+    
     <html>
         
 
@@ -17,9 +21,9 @@ if(isset($_POST["displayChildren"])) {
                 <?php
                 if (mysqli_num_rows($result) > 0) {
                     ?>
-                    <table>
+                    <table class="center">
                         <tr>
-                          <td>childId</td>
+                          <td>childId</td>-->
                           <td>childname</td>
                           
                         </tr>
@@ -28,7 +32,7 @@ if(isset($_POST["displayChildren"])) {
                         while($row = mysqli_fetch_array($result)) {
                         ?>
                             <tr>
-                                <td><?php echo $row["childId"]; ?></td>
+                               <td><?php echo $row["childId"]; ?></td>
                                 <td><?php echo $row["childname"]; ?></td>
                              
                             </tr>

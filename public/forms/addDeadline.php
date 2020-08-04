@@ -5,8 +5,9 @@ include_once "serverConnection.php";
 if(isset($_POST['addSingleChild'])){
 
 
-        $query = mysqli_query($conn,"CALL addDeadline('$deadLineInHtml','$childNameInHtml2','$dateTimeInHtml','$detailInHtml','$notesInHtml'")
-        or die(mysql_error());
+        $query = mysqli_query($conn,"INSERT INTO 'deadlinesandappointments'(deadlineId, deadlineName, childName, dateTimeset, details, notes) 
+                 .VALUES(NULL,'$deadLineInHtml','$childNameInHtml2','$dateTimeInHtml','$detailInHtml','$notesInHtml'");
+//        or die(mysql_error());
         
 }
 if(isset($_POST['addAllChild'])){

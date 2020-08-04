@@ -26,7 +26,7 @@
                           <table>
 
                           <tr>
-                            <td>deadlineId</td>
+<!--                            <td>deadlineId</td>-->
                             <td>deadlineName</td>
                             <td>childName</td>
                             <td>dateTimeSet</td>
@@ -38,7 +38,7 @@
                         while($row = mysqli_fetch_array($result)) {
                         ?>
                         <tr>
-                            <td><?php echo $row["deadlineId"]; ?></td>
+<!--                            <td><?php //echo $row["deadlineId"]; ?></td>-->
                             <td><?php echo $row["deadlineName"]; ?></td>
                             <td><?php echo $row["childName"]; ?></td>
                             <td><?php echo $row["dateTimeset"]; ?></td>
