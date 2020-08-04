@@ -7,11 +7,6 @@ if(isset($_POST['addSingleChild'])){
 //        local varible needed as otherwise does not like to transfer over datetime
         try {
 
-//            $name1 = "francis";
-//            $name2 = "francis";
-//            $name3 = "1111-11-11 11:11:11";
-//            $name4 = "dsadsad";
-//            $name5 ="sdsadsad";
 
             $statement = $link->prepare('CALL addDeadLine(:aDeadLineName,:achildName,:adateTimeset,:adetails,:anotes) ');
             

@@ -296,26 +296,45 @@ tr:nth-child(even) {
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
-            <div class="w3-section">
+         <div class="w3-section">
+              <form method="post">
+                    <label><b>enter deadline name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn3" id ="deadlineIn3"  required>  
+                    
+                    <label><b>enter deadline date time as 0000-00-00 00:00:00 </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn3" id ="dateTimeIn3"  required>  
+                    
+                    <label><b>enter child name if required </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn3" id ="childNameIn3"  required>  
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn3'])){
+                        
+                    $input1 = $_POST['deadlineIn3'];
+                    $input2 = $_POST['dateTimeIn3'];
+                    $input3 = $_POST['childNameIn3'];
+                    
+                    $data = [
+                        'deadlineIn3Html'=> $input1,
+                        'dateTimeIn3Html'=> $input2,
+                        'childNameIn3Html'=> $input3
+                    ];
+                    extract($data);
+                    require './forms/deleteDeadline.php';
 
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="deleteForSingleChild" class="w3-block w3-green w3-section w3-padding ">delete for single child  </button>
+                    <button name="deleteForAllChild" class="w3-block w3-green w3-section w3-padding ">delete for all children</button>
               
-              
+              </form>
 
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter deadline name" name="deadlineName" required>
-
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="enter date time" name="dateTime" required>
-
-              <button  type="deletedeadline" class="w3-block w3-green w3-section w3-padding">delete deadline</button>
-
-
-              
             </div>
-          </form>
+        </form>
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <button onclick="document.getElementById('deletedeadline').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
