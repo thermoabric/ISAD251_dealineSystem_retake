@@ -5,7 +5,7 @@ The application has the following features:
 
 1. Allows both parent and child specific fuctionality. Complete
 2. Parent can view specific child appointments. Complete
-3. Parent can create deadline for specific child or all children.
+3. Parent can create deadline for specific child or all children. Complete
 4. Parent can add children. Complete
 5. Parent can view all children. Complete
 6. Parent can delete deadline. 

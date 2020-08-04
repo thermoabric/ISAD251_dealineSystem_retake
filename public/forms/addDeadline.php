@@ -3,7 +3,8 @@
 include_once "serverConnection.php";
 //INSERT INTO deadlinesandappointments(deadlineId, deadlineName, childName, dateTimeset, details, notes) VALUES(NULL,'$deadLineInHtml','$dateTimeInHtml','$detailInHtmll','$notesInHtml','$childNameInHtml')
 if(isset($_POST['addSingleChild'])){
-
+        $dateTimeCheck = $dateTimeInHtml;
+//        local varible needed as otherwise does not like to transfer over datetime
         try {
 
 //            $name1 = "francis";
@@ -13,15 +14,10 @@ if(isset($_POST['addSingleChild'])){
 //            $name5 ="sdsadsad";
 
             $statement = $link->prepare('CALL addDeadLine(:aDeadLineName,:achildName,:adateTimeset,:adetails,:anotes) ');
-            echo $deadLineInHtml;
-            echo $childNameInHtml2;
-            echo $dateTimeInHtml;
-            echo $dateTimeInHtml;
-            echo $detailInHtml;
-            echo $notesInHtml;
+            
             $statement->bindParam(':aDeadLineName', $deadLineInHtml);
             $statement->bindParam(':achildName', $childNameInHtml2);
-            $statement->bindParam(':adateTimeset', $dateTimeInHtml);
+            $statement->bindParam(':adateTimeset', $dateTimeCheck);
             $statement->bindParam(':adetails', $detailInHtml);
             $statement->bindParam(':anotes', $notesInHtml);
             $statement->execute();
@@ -35,8 +31,25 @@ if(isset($_POST['addSingleChild'])){
 
 }
 if(isset($_POST['addAllChild'])){
-        $query = mysqli_query($conn, "INSERT INTO familymembers VALUES(NULL,'$childNameInHtml2') ")
-        or die(mysql_error());
+        try {
+
+    
+             
+            $statement = $link->prepare('CALL createSharedDeadline(:aDeadLineName,:adateTimeset,:adetails,:anotes) ');
+
+            $statement->bindParam(':aDeadLineName', $deadLineInHtml);
+            $statement->bindParam(':adateTimeset', $dateTimeInHtml);
+            $statement->bindParam(':adetails', $detailInHtml);
+            $statement->bindParam(':anotes', $notesInHtml);
+            $statement->execute();
+
+
+
+
+        } catch(PDOException $e) {
+               echo $e->getMessage();
+           }
+         
         
         
         

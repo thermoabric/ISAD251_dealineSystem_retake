@@ -142,42 +142,36 @@ tr:nth-child(even) {
           
             <div class="w3-section">
               <form method="post">
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadLineIn" id ="deadLineIn" required>
-              
-             
-              
-              
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime"id ="dateTimeIn" required>
-
-              <label><b>Details </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="detailsIn" id ="detailsIn" required>
-
-              <label><b>Notes </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notesIn"  id ="notesIn" required>
-              
-              <label><b>Child</b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter child if required" name="childNameIn"  id ="childNameIn" required>
-              
-              
-              
-              <?php 
-                    if(!empty($_POST['deadLineIn'])&& !empty($_POST['dateTimeIn'])){
-//                        
-                    $inputDeadLineName = $_POST['deadLineIn'];
-                    $inputdatetimeIn = $_POST['dateTimeIn'];
-                    $inputDetails = $_POST['detailsIn'];
-                    $inputNotes = $_POST['notesIn'];
-                    $inputChildNameIn2 = $_POST['childNameIn'];
+                    <label><b>enter deadline name</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn2" id ="deadlineIn2"  required> 
+                    
+                    <label><b>enter date time as 0000-00-00 00:00:00</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn2" id ="dateTimeIn2"  required> 
+                    
+                    <label><b>enter details</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="detailsIn2" id ="detailsIn2"  required> 
+                    
+                    <label><b>enter notes</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="notesIn2" id ="notesIn2"  required> 
+                    
+                    <label><b>enter child name if required</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn2" id ="childNameIn2"  required> 
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn2'])){
+                        
+                    $input1 = $_POST['deadlineIn2'];
+                    $input2 = $_POST['dateTimeIn2'];
+                    $input3 = $_POST['detailsIn2'];
+                    $input4 = $_POST['notesIn2'];
+                    $input5 = $_POST['childNameIn2'];
                     
                     $data = [
-                        'deadLineInHtml'=> $inputDeadLineName,
-                        'dateTimeInHtml'=> $inputdatetimeIn,
-                        'detailInHtml'=> $inputDetails,
-                        'notesInHtml'=> $inputNotes,
-                        'childNameInHtml2'=> $inputChildNameIn2,
-                        
+                        'deadLineInHtml'=> $input1,
+                        'dateTimeInHtml'=> $input2,
+                        'detailInHtml'=> $input3,
+                        'notesInHtml'=> $input4,
+                        'childNameInHtml2'=> $input5
                     ];
                     extract($data);
                     require './forms/addDeadline.php';
@@ -186,20 +180,17 @@ tr:nth-child(even) {
                        
                  }
                     
-                    ?>  
-
-
-
-              <button name="submitAllChild" class="w3-block w3-green w3-section w3-padding ">add for all children </button>
+                    ?>
+                    
+                    <button name="addSingleChild" class="w3-block w3-green w3-section w3-padding ">add single for one child </button>
+                    <button name="addAllChild" class="w3-block w3-green w3-section w3-padding ">add appointment for all children </button>
               
-              
-              <button name="addSingleChild" class="w3-block w3-green w3-section w3-padding ">add for single child </button>
-              
-           
-             </form> 
+              </form>
+
             </div>
  
-          
+          </form>
+
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <button onclick="document.getElementById('addDeadlineForAllChildren').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
@@ -349,7 +340,7 @@ tr:nth-child(even) {
                     <?php 
                    
                     if(!empty($_POST['childNameIn2'])){
-//                        
+                        
                     $input = $_POST['childNameIn2'];
                     
                     $data = [
