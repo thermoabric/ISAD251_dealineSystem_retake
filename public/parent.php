@@ -163,7 +163,7 @@ tr:nth-child(even) {
               
               
               <?php 
-                    if(!empty($_POST['deadLineIn'])&& !empty($_POST['dateTimeIn'])&& !empty($_POST['details']) && !empty($_POST['notes'])){
+                    if(!empty($_POST['deadLineIn'])&& !empty($_POST['dateTimeIn'])){
 //                        
                     $inputDeadLineName = $_POST['deadLineIn'];
                     $inputdatetimeIn = $_POST['dateTimeIn'];
@@ -176,7 +176,7 @@ tr:nth-child(even) {
                         'dateTimeInHtml'=> $inputdatetimeIn,
                         'detailInHtml'=> $inputDetails,
                         'notesInHtml'=> $inputNotes,
-                        'childNameInHtml2'=> $inputChildNameIn,
+                        'childNameInHtml2'=> $inputChildNameIn2,
                         
                     ];
                     extract($data);
