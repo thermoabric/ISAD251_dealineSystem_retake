@@ -30,6 +30,22 @@ this the is the parent page which has the server functions to do the following
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
 </style>
 <body>
 
@@ -152,29 +168,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
             <div class="w3-section">
+              <form method="post">
+                    <label><b>enter your name to find deadline </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn" id ="childNameIn"  required>  
+                    <?php 
+                    if(isset($_POST['childNameIn']) && !empty($_POST['childNameIn'])){
+//                        $childNameInHtml = $_POST['childNameIn'];
+                    $input = $_POST['childNameIn'];
+                    
+                    $data = [
+                        'childNameInHtml'=> $input
+                    ];
+                    extract($data);
+                    require './forms/viewDeadline.php';
 
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name to find deadline" name="childname" required>  
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="submitChild" class="w3-block w3-green w3-section w3-padding ">load appointments </button>
               
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
-
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
-
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
-
-              <label><b>Details </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no details" name="details" required>
-
-              <label><b>Notes </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there are no notes" name="notes" required>
-
-
-              
-            </div>
+              </form>
+          
+                </div>
           </form>
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
@@ -305,6 +324,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-content">
       <center>
     	<h1 class="w3-margin w3-jumbo">Have a wonderful day ! </h1>
+        <?php
+            include "./forms/viewDeadline.php";
+            
+     
+        ?>
         </center>
   </div>
 </div>

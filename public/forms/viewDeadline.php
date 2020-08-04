@@ -4,7 +4,7 @@
     // thinks childnameinhtml undefined its not 
     
 
-     $result = mysqli_query($conn," SELECT * FROM deadlinesandappointments WHERE childName = ('$childNameInHtml') ");
+     $result = $conn->query(" SELECT * FROM deadlinesandappointments WHERE childName = ('$childNameInHtml') ");
     
     // bug with procedure only printing to pop up and not to parent page ? 
     //$result = mysqli_query($conn," CALL getAllDeadlinesAndAppointments('$childNameInHtml') ");

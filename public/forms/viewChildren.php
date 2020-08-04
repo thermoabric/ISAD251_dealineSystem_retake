@@ -2,10 +2,11 @@
 include_once "serverConnection.php";
 
 
+//$result = mysqli_query($conn," CALL getAllFamilyMembers");
 
 
+$result = $conn->query("CALL getAllFamilyMembers");
 
-$result = mysqli_query($conn," CALL getAllFamilyMembers");
 ?>
 <?php
 if(isset($_POST["displayChildren"])) { 
