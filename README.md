@@ -9,7 +9,8 @@ The application has the following features:
 4. Parent can add children. Complete
 5. Parent can view all children. Complete
 6. Parent can delete deadline of single and all children.  Complete
-7. Parent can edit details and notes.
+7. Parent can edit details and notes. Complete
 8. Child can view appointments. Complete
-9. Child can add deadline details to show task completed via details or notes input.
-10. child can move deadline. 
+9. Child can add deadline details to show task completed via details or notes input. Complete
+10.child can move deadline.  Complete
+11. Child can delete deadline. Complete

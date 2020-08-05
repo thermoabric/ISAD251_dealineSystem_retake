@@ -2,25 +2,25 @@
 
 include_once "serverConnection.php";
 //INSERT INTO familymembers VALUES(NULL,'$childNameInHtml2')
-if(isset($_POST['addNotesAndDetails'])){
+
+if(isset($_POST['moveDeadlineChild'])){
 //        $query = mysqli_query($conn, "INSERT INTO familymembers VALUES(NULL,'$childNameInHtml2') ")
-//        or die(mysql_error());
+////        or die(mysql_error());
 //        echo $deadLineInHtml;
-//        echo $childNameInHtml3;
+//        echo $childNameInHtml4;
 //        echo $dateTimeInHtml;
-//        echo $detailInHtml;
-//        echo $notesInHtml;
+//        echo $adateTimeToSetHtml;
+////     
         
         try {
 
             
-            $statement = $link->prepare('CALL editDetailsOfFamilyMemberANDchildAddDetails(:adeadlineName,:achildName,:adateTime,:adetails,:aNotes) ');
+            $statement = $link->prepare('CALL moveDeadlineChild(:adeadlineName,:achildName,:adateTime,:adateTimeToSet) ');
 
             $statement->bindParam(':adeadlineName', $deadLineInHtml);
-            $statement->bindParam(':achildName', $childNameInHtml3);
+            $statement->bindParam(':achildName', $childNameInHtml4);
             $statement->bindParam(':adateTime', $dateTimeInHtml);
-            $statement->bindParam(':adetails', $detailInHtml);
-            $statement->bindParam(':aNotes', $notesInHtml);
+            $statement->bindParam(':adateTimeToSet', $adateTimeToSetHtml);
             $statement->execute();
      
 

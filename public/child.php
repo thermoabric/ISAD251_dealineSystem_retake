@@ -91,9 +91,9 @@ tr:nth-child(even) {
                     </a>
             </div>  
             <div class="w3-container w3-purple w3-padding-16" >
-                    <button onclick="document.getElementById('addToNotes').style.display='block'" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('deletedeadline').style.display='block'" class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
-                        <h2>show task completed </h2>
+                        <h2>delete deadline </h2>
                     </a>
             </div>
             <div class="w3-container w3-blue w3-padding-16" >
@@ -122,36 +122,56 @@ tr:nth-child(even) {
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
-            <div class="w3-section">
-                
-             <label><b>please enter your name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="childname" name="childName" required>
-                
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter deadline name" name="deadlineName" required>
+           <div class="w3-section">
+              <form method="post">
+                    <label><b>enter deadline name</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn3" id ="deadlineIn3"  required> 
+                    
+                    <label><b>enter your name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn3" id ="childNameIn3"  required> 
+                    
+                    <label><b>enter date time as 0000-00-00 00:00:00</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn3" id ="dateTimeIn3"  required> 
+                    
+                    <label><b>enter details</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="detailsIn3" id ="detailsIn3"  required> 
+                    
+                    <label><b>enter notes please use this to show task completed</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="notesIn3" id ="notesIn3"  required> 
+                    
+                   
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn3'])){
+                        
+                    $input1 = $_POST['deadlineIn3'];
+                    $input2 = $_POST['childNameIn3'];
+                    $input3 = $_POST['dateTimeIn3'];
+                    $input4 = $_POST['detailsIn3'];
+                    $input5 = $_POST['notesIn3'];
+                    
+                    $data = [
+                        'deadLineInHtml'=> $input1,
+                        'dateTimeInHtml'=> $input3,
+                        'detailInHtml'=> $input4,
+                        'notesInHtml'=> $input5,
+                        'childNameInHtml3'=> $input2
+                    ];
+                    extract($data);
+                    require './forms/editDetailsAndNotes.php';
 
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="Enter date and time" name="dateTime" required>
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="addNotesAndDetails" class="w3-block w3-green w3-section w3-padding ">add details and notes </button>
+                    
+              
+              </form>
 
-
-
-              <button class="w3-button w3-block w3-green w3-section w3-padding" type="loaddeadline">load deadline</button>
-              
-             
-              
-              <label><b>Notes </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter notes" name="notes" required>
-              
-              
-              <label><b>Details </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter details" name="details" required>
-              
-              
-              <button class="w3-button w3-block w3-green w3-section w3-padding" type="savechanges">save changes </button>
-              
             </div>
-          </form>
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <button onclick="document.getElementById('enterdeadlinedetails').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
@@ -202,51 +222,6 @@ tr:nth-child(even) {
 
         </div>
       </div>
-    <!--edit details and notes-->
-    <div id="editDetailsAndNotes" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-
-          <div class="w3-center"><br>
-            <span onclick="document.getElementById('editDetailsAndNotes').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close editDetailsAndNotes">×</span>
-            <h5>please enter information below</h5> 
-          </div>
-
-          <form class="w3-container" action="/action_page.php">
-            <div class="w3-section">
-
-    <!--            user enteres these vaules -->
-              <label><b>Enter Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
-
-              <label><b>Enter Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
-
-              <label><b> Enter Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
-
-              
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
-    <!--          user can now edit these values-->
-
-
-              <label><b>Details add or edit if required </b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there are no details" name="details" required>
-
-              <label><b>Notes add or edit if required </b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there are no notes" name="notes" required>
-
-
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">Submit and save</button>
-              
-            </div>
-          </form>
-
-          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <button onclick="document.getElementById('editDetailsAndNotes').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-          </div>
-
-        </div>
-      </div>
     <!-- delete deadline-->
     <div id="deletedeadline" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
@@ -256,26 +231,45 @@ tr:nth-child(even) {
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
-            <div class="w3-section">
+         <div class="w3-section">
+              <form method="post">
+                    <label><b>enter deadline name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn3" id ="deadlineIn3"  required>  
+                    
+                    <label><b>enter deadline date time as 0000-00-00 00:00:00 </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn3" id ="dateTimeIn3"  required>  
+                    
+                    <label><b>enter your name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn3" id ="childNameIn3"  required>  
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn3'])){
+                        
+                    $input1 = $_POST['deadlineIn3'];
+                    $input2 = $_POST['dateTimeIn3'];
+                    $input3 = $_POST['childNameIn3'];
+                    
+                    $data = [
+                        'deadlineIn3Html'=> $input1,
+                        'dateTimeIn3Html'=> $input2,
+                        'childNameIn3Html'=> $input3
+                    ];
+                    extract($data);
+                    require './forms/deleteDeadline.php';
 
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="deleteForSingleChild" class="w3-block w3-green w3-section w3-padding ">Confirm deletion of deadline  </button>
+                    
               
-              
+              </form>
 
-              <label><b>Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter deadline name" name="deadlineName" required>
-
-              <label><b>Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="enter date time" name="dateTime" required>
-
-              <button  type="deletedeadline" class="w3-block w3-green w3-section w3-padding">delete deadline</button>
-
-
-              
             </div>
-          </form>
+        </form>
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <button onclick="document.getElementById('deletedeadline').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
@@ -283,36 +277,72 @@ tr:nth-child(even) {
 
         </div>
       </div>
-    <!-- add new family member-->
-    <div id="addmember" class="w3-modal">
+    <!--move deadline of child -->
+    <div id="movedeadline" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
           <div class="w3-center"><br>
-            <span onclick="document.getElementById('addmember').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addmember">×</span>
+            <span onclick="document.getElementById('movedeadline').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close enterdeadlinedetails">×</span>
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
-            <div class="w3-section">
+           <div class="w3-section">
+              <form method="post">
+                    <label><b>enter deadline name</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn4" id ="deadlineIn4"  required> 
+                    
+                    <label><b>enter your name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn4" id ="childNameIn4"  required> 
+                    
+                    <label><b>enter date time as 0000-00-00 00:00:00</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn4" id ="dateTimeIn4"  required> 
+                    
+                    <label><b>enter date and time to change to as 0000-00-00 00:00:00</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="adateTimeToSet" id ="adateTimeToSet"  required> 
+                    
+                    
+                    
+                   
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn4'])){
+                        
+                    $input1 = $_POST['deadlineIn4'];
+                    $input2 = $_POST['childNameIn4'];
+                    $input3 = $_POST['dateTimeIn4'];
+                    $input4 = $_POST['adateTimeToSet'];
+                    
+                    
+                    $data = [
+                        'deadLineInHtml'=> $input1,
+                        'childNameInHtml4'=> $input2,
+                        'dateTimeInHtml'=> $input3,
+                        'adateTimeToSetHtml'=> $input4
+                        
+                    ];
+                    extract($data);
+                    require './forms/changeDeadlineDate.php';
 
-              <label><b>Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="moveDeadlineChild" class="w3-block w3-green w3-section w3-padding ">add details and notes </button>
+                    
               
-          
+              </form>
 
-              <button  type="addmember" class="w3-block w3-green w3-section w3-padding">add member</button>
-
-
-              
             </div>
-          </form>
 
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <button onclick="document.getElementById('addmember').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+            <button onclick="document.getElementById('emovedeadline').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
           </div>
 
         </div>
       </div>
+    
     
     
 
