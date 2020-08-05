@@ -89,9 +89,9 @@ tr:nth-child(even) {
                     </a>
             </div>  
             <div class="w3-container w3-purple w3-padding-16" >
-                    <button onclick="document.getElementById('editDetailsAndNotes').style.display='block'" class=" w3-button  w3-hover-white">
+                    <button onclick="document.getElementById('addNotesAndDetails').style.display='block'" class=" w3-button  w3-hover-white">
                         <div class="w3-clear"></div>
-                        <h2>edit details and notes </h2>
+                        <h2>add details and notes to deadlines</h2>
                     </a>
             </div>
         </div>
@@ -243,46 +243,71 @@ tr:nth-child(even) {
         </div>
       </div>
     <!--edit details and notes-->
-    <div id="editDetailsAndNotes" class="w3-modal">
+    <div id="addNotesAndDetails" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
           <div class="w3-center"><br>
-            <span onclick="document.getElementById('editDetailsAndNotes').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close editDetailsAndNotes">×</span>
+            <span onclick="document.getElementById('addNotesAndDetails').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close addDeadlineForAllChildren">×</span>
             <h5>please enter information below</h5> 
           </div>
 
-          <form class="w3-container" action="/action_page.php">
+          
             <div class="w3-section">
+              <form method="post">
+                    <label><b>enter deadline name</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="deadlineIn3" id ="deadlineIn3"  required> 
+                    
+                    <label><b>enter child name </b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="childNameIn3" id ="childNameIn3"  required> 
+                    
+                    <label><b>enter date time as 0000-00-00 00:00:00</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="dateTimeIn3" id ="dateTimeIn3"  required> 
+                    
+                    <label><b>enter details</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="detailsIn3" id ="detailsIn3"  required> 
+                    
+                    <label><b>enter notes</b></label>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text"  name="notesIn3" id ="notesIn3"  required> 
+                    
+                   
+                    <?php 
+                   
+                    if(!empty($_POST['deadlineIn3'])){
+                        
+                    $input1 = $_POST['deadlineIn3'];
+                    $input2 = $_POST['childNameIn3'];
+                    $input3 = $_POST['dateTimeIn3'];
+                    $input4 = $_POST['detailsIn3'];
+                    $input5 = $_POST['notesIn3'];
+                    
+                    $data = [
+                        'deadLineInHtml'=> $input1,
+                        'dateTimeInHtml'=> $input3,
+                        'detailInHtml'=> $input4,
+                        'notesInHtml'=> $input5,
+                        'childNameInHtml3'=> $input2
+                    ];
+                    extract($data);
+                    require './forms/editDetailsAndNotes.php';
 
-    <!--            user enteres these vaules -->
-              <label><b>Enter Child name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="enter child name" name="childname" required>  
-
-              <label><b>Enter Deadline name </b></label>
-              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="there is no deadline name" name="deadlineName" required>
-
-              <label><b> Enter Date and time in format year-month-day hour:min:sec</b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there is no date or time" name="dateTime" required>
-
+                       
+                       
+                 }
+                    
+                    ?>
+                    
+                    <button name="addNotesAndDetails" class="w3-block w3-green w3-section w3-padding ">add details and notes </button>
+                    
               
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">next deadline</button>
-    <!--          user can now edit these values-->
+              </form>
 
-
-              <label><b>Details add or edit if required </b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there are no details" name="details" required>
-
-              <label><b>Notes add or edit if required </b></label>
-              <input class="w3-input w3-border" type="text" placeholder="there are no notes" name="notes" required>
-
-
-              <button  type="button" class="w3-block w3-green w3-section w3-padding">Submit and save</button>
-              
             </div>
+ 
           </form>
 
+
           <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <button onclick="document.getElementById('editDetailsAndNotes').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+            <button onclick="document.getElementById('addNotesAndDetails').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
           </div>
 
         </div>
