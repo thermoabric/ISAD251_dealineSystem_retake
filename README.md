@@ -14,3 +14,4 @@ The application has the following features:
 9. Child can add deadline details to show task completed via details or notes input. Complete
 10.child can move deadline.  Complete
 11. Child can delete deadline. Complete
+video link https://youtu.be/q1RK0DL5qzk
